@@ -21,4 +21,8 @@
 			width: min(100%, rem(167));
 		}
 	}
+
+	&__title {
+		text-transform: uppercase;
+	}
 }

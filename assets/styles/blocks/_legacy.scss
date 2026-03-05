@@ -7,6 +7,11 @@
 		row-gap: fluid(60, 24);
 	}
 
+	&__item {
+		position: sticky;
+		top: rem(100);
+	}
+
 	&__media {
 		display: flex;
 		flex-direction: column;
