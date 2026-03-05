@@ -712,7 +712,6 @@ button[aria-label]::before {
 .benefits__list {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
   gap: 1.5rem;
 }
@@ -1160,6 +1159,3 @@ button[aria-label]::before {
 .footer__copyright strong {
   font-weight: 400;
 }
-
-
-
