@@ -1,0 +1,99 @@
+@use '../helpers' as *;
+
+.advantage {
+	position: relative;
+	padding: rem(204) rem(174);
+
+	@include laptop {
+		padding: rem(160) rem(100);
+	}
+
+	@include tablet {
+		padding: rem(100) rem(0);
+	}
+
+	@include mobile {
+		padding: rem(70) rem(0);
+	}
+
+	&::before {
+		@include bg(true, cover, 0, var(--bgUrl), var(--bgUrl2x));
+
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: var(--z-below);
+		border-radius: 50%;
+
+		@include tablet {
+			left: -10%;
+			right: -10%;
+		}
+
+		@include mobile {
+			left: -83%;
+			right: -83%;
+		}
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: auto 35.5% auto;
+		align-items: center;
+		gap: rem(9);
+
+		@include mobile {
+			grid-template-columns: auto;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		row-gap: rem(22);
+		min-height: rem(402);
+		padding: rem(24) rem(32);
+		background-color: var(--color-cotton);
+		border-radius: 50%;
+
+		&:not(:nth-child(2)) {
+			@include mobile {
+				margin-inline: rem(25);
+			}
+		}
+
+		&:nth-child(2) {
+			min-height: rem(465);
+		}
+
+		&--decor-vertical {
+			&::before,
+			&::after {
+				content: '';
+				display: block;
+				width: rem(6);
+				height: rem(85);
+				background-image: url('./../icons/line-vertical.svg');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+			}
+		}
+
+		&:not(&--decor-vertical) {
+			&::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: rem(6);
+				background-image: url('./../icons/line.svg');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+			}
+		}
+	}
+}

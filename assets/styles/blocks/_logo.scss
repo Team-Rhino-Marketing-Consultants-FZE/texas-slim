@@ -1,0 +1,10 @@
+@use '../helpers' as *;
+
+.logo {
+	width: #{fluid(139, 41)};
+	height: #{fluid(100, 68)};
+
+	&__image {
+		object-fit: contain;
+	}
+}

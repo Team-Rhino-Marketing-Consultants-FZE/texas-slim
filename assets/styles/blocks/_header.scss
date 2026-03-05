@@ -1,0 +1,73 @@
+@use '../helpers' as *;
+
+.header {
+	--headerColumnGap: #{rem(87)};
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: var(--z-header);
+
+	@include laptop {
+		--headerColumnGap: #{rem(32)};
+	}
+
+	&__navigation {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		column-gap: var(--headerColumnGap);
+		padding-top: fluid(20, 12);
+		color: var(--color-cotton);
+
+		@include tablet {
+			display: grid;
+			grid-template-columns: minmax(auto, rem(122)) auto rem(122);
+		}
+
+		&-list {
+			display: flex;
+			align-items: stretch;
+			gap: var(--headerColumnGap);
+
+			@include tablet {
+				display: none;
+			}
+		}
+
+		&-logo {
+			position: relative;
+			z-index: var(--z-header-elements);
+
+			@include tablet {
+				margin-inline: auto;
+			}
+		}
+
+		&-item {
+			display: flex;
+			align-items: stretch;
+		}
+
+		&-link {
+			align-items: center;
+			font-size: rem(14);
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+
+		&-actions {
+			position: relative;
+			z-index: var(--z-header-elements);
+			display: flex;
+			align-items: center;
+			column-gap: var(--headerColumnGap);
+			mix-blend-mode: difference;
+
+			@include tablet {
+				justify-content: end;
+			}
+		}
+	}
+}

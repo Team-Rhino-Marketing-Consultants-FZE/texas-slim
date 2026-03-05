@@ -1,0 +1,20 @@
+@use './../helpers' as *;
+
+.schedule-meeting {
+	&__calendly-widget {
+		max-width: rem(800);
+		margin-inline: auto;
+
+		@media (min-width: 684px) {
+			margin-top: rem(-66);
+			margin-bottom: rem(-96);
+		}
+
+		@media (max-width: 683px) {
+			overflow: hidden;
+			background-color: var(--color-white);
+			border: var(--border);
+			border-radius: rem(24);
+		}
+	}
+}

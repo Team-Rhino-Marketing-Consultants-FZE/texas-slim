@@ -1,0 +1,76 @@
+@use '../helpers' as *;
+
+.hero {
+	position: relative;
+	padding-block: fluid(214, 200) fluid(424, 208);
+	color: var(--color-cotton);
+
+	&::before {
+		@include bg(
+			true,
+			cover,
+			0,
+			var(--bgUrl),
+			var(--bgUrl2x),
+			var(--bgMobileUrl),
+			var(--bgMobileUrl2x)
+		);
+
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: var(--z-below);
+		clip-path: ellipse(65% 99.5% at 50% 0%);
+
+		@include tablet {
+			clip-path: ellipse(90% 99.5% at 50% 0%);
+		}
+
+		@include mobile {
+			clip-path: ellipse(110% 99.5% at 50% 0%);
+		}
+
+		@include mobile-s {
+			clip-path: ellipse(150% 99.5% at 50% 0%);
+		}
+	}
+
+	&__body {
+		--container-width: #{rem(787)};
+
+		text-align: center;
+	}
+
+	&__title {
+		@include spacing-bottom(fluid(60, 24));
+	}
+
+	&__description {
+		@include spacing-bottom(fluid(40, 32));
+
+		max-width: rem(449);
+		margin-inline: auto;
+		font-weight: 500;
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: rem(28);
+
+		@include mobile {
+			flex-direction: column;
+			row-gap: rem(16);
+			max-width: rem(257);
+			margin-inline: auto;
+		}
+
+		&-item,
+		&-button {
+			@include mobile {
+				width: 100%;
+			}
+		}
+	}
+}

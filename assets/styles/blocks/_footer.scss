@@ -1,0 +1,176 @@
+@use '../helpers' as *;
+
+.footer {
+	background-color: var(--color-dark);
+	border-top-left-radius: rem(300);
+	border-top-right-radius: rem(300);
+
+	@include laptop {
+		border-top-left-radius: rem(160);
+		border-top-right-radius: rem(160);
+	}
+
+	@include tablet {
+		border-top-left-radius: rem(120);
+		border-top-right-radius: rem(120);
+	}
+
+	@include mobile {
+		border-top-left-radius: rem(100);
+		border-top-right-radius: rem(100);
+	}
+
+	&__inner {
+		--container-width: #{rem(1095)};
+		--container-padding-x: #{rem(24)};
+
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(40);
+		padding-block: rem(162) rem(112);
+		color: var(--color-cotton);
+
+		@include tablet {
+			padding-block: rem(120) rem(80);
+		}
+
+		@include mobile {
+			padding-block: rem(97) rem(58);
+		}
+	}
+
+	&__body {
+		display: flex;
+		align-items: start;
+		justify-content: space-between;
+		column-gap: rem(80);
+
+		@include tablet {
+			column-gap: rem(60);
+		}
+
+		@include mobile {
+			flex-direction: column;
+			row-gap: rem(40);
+		}
+	}
+
+	&__subscribe {
+		@include mobile-above {
+			width: min(100%, rem(311));
+		}
+
+		@include mobile {
+			text-align: center;
+		}
+
+		&-title {
+			@include spacing-bottom(rem(20));
+		}
+
+		&-description {
+			@include spacing-bottom(fluid(40, 24));
+		}
+
+		&-form {
+			position: relative;
+		}
+
+		&-field {
+			& .field__input {
+				padding-right: rem(60);
+			}
+		}
+
+		&-button {
+			position: absolute;
+			top: 0%;
+			bottom: 0%;
+			right: 0%;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			width: rem(48);
+			color: var(--color-dark);
+		}
+	}
+
+	&__title {
+		font-family: inherit;
+		font-size: rem(18);
+		font-weight: 500;
+		opacity: 0.6;
+	}
+
+	&__menus {
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: rem(60);
+		row-gap: rem(20);
+
+		@include tablet {
+			column-gap: rem(40);
+		}
+
+		@include mobile {
+			column-gap: rem(90);
+		}
+	}
+
+	&__menu {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(20);
+
+		&-list {
+			display: flex;
+			flex-direction: column;
+			row-gap: rem(10);
+		}
+
+		&-link {
+			font-size: rem(14);
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+	}
+
+	&__extra {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: rem(80);
+		row-gap: rem(24);
+
+		@include tablet {
+			column-gap: rem(60);
+		}
+
+		&-menu {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			column-gap: rem(80);
+			row-gap: rem(16);
+
+			@include tablet {
+				column-gap: rem(68);
+			}
+
+			&-link {
+				font-size: rem(14);
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	&__copyright {
+		opacity: 0.5;
+
+		strong {
+			font-weight: 400;
+		}
+	}
+}

@@ -1,0 +1,41 @@
+@use '../helpers' as *;
+
+.button {
+	@include reset-button;
+
+	text-align: center;
+	font-size: rem(14);
+	font-weight: 600;
+	text-transform: uppercase;
+
+	@include hover {
+		color: var(--color-accent);
+	}
+
+	&.button--variant-rounded {
+		min-height: rem(50);
+		padding: rem(4) rem(28);
+		font-size: rem(16);
+		font-weight: 500;
+		color: var(--color-dark);
+		background-color: var(--color-cotton);
+		border: var(--border);
+		border-radius: rem(1000);
+
+		@include hover {
+			color: var(--color-cotton);
+			background-color: transparent;
+		}
+
+		&-transparent {
+			color: var(--color-cotton);
+			background-color: transparent;
+
+			@include hover {
+				color: var(--color-dark);
+				background-color: var(--color-accent);
+				border-color: var(--color-accent);
+			}
+		}
+	}
+}

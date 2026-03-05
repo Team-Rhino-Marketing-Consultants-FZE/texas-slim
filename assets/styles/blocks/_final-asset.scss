@@ -1,0 +1,34 @@
+@use '../helpers' as *;
+
+.final-asset {
+	&__inner {
+		display: flex;
+		align-items: start;
+		justify-content: space-between;
+		gap: rem(40);
+
+		@include tablet {
+			flex-direction: column;
+		}
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		row-gap: fluid(28, 20);
+
+		@include tablet-above {
+			max-width: rem(312);
+		}
+	}
+
+	&__image {
+		min-width: 0;
+		object-fit: cover;
+
+		@include tablet {
+			width: 100%;
+			height: rem(266);
+		}
+	}
+}

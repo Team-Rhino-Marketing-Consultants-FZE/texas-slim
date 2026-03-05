@@ -1,0 +1,42 @@
+@use '../helpers' as *;
+
+.field {
+	&__input {
+		width: 100%;
+		padding: rem(4) rem(24);
+		height: var(--input-height);
+		color: var(--color-white);
+		background-color: transparent;
+		border: var(--border);
+		border-radius: rem(100);
+		transition-duration: var(--transition-duration);
+
+		:is(&, &::placeholder) {
+			font-size: rem(16);
+		}
+
+		&::placeholder {
+			color: var(--color-cotton);
+		}
+
+		&:focus-visible {
+			border-color: var(--color-accent);
+			outline: none;
+		}
+
+		@include hover {
+			border-color: var(--color-accent);
+		}
+
+		&--variant-background {
+			--input-height: #{rem(44)};
+
+			color: var(--color-black);
+			background-color: var(--color-cotton);
+
+			&::placeholder {
+				color: var(--color-dark);
+			}
+		}
+	}
+}

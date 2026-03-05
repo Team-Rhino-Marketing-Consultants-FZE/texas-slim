@@ -1,0 +1,24 @@
+@use '../helpers' as *;
+
+.benefits {
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: rem(24);
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		row-gap: fluid(16, 12);
+		width: min(100%, rem(312));
+
+		@include mobile {
+			width: min(100%, rem(167));
+		}
+	}
+}

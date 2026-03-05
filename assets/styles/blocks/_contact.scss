@@ -1,0 +1,51 @@
+@use '../helpers' as *;
+
+.contact {
+	@include bg(true, cover, 0.3, var(--bgUrl), var(--bgUrl2x));
+
+	padding-block: fluid(125, 60);
+
+	&__inner {
+		--container-width: #{rem(650)};
+	}
+
+	&__body,
+	&__header,
+	&__form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__body {
+		position: relative;
+		row-gap: fluid(60, 40);
+		padding: rem(153) rem(113);
+		background-image: url('../images/contact/wrapper.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		color: var(--color-white);
+
+		@include mobile {
+			padding-inline: rem(90);
+		}
+
+		@include mobile-s {
+			padding: rem(127) rem(80);
+			background-image: url('../images/contact/wrapper-mobile.svg');
+		}
+
+		@include mobile-xs {
+			padding-inline: rem(50);
+		}
+	}
+
+	&__header {
+		row-gap: rem(18);
+		text-align: center;
+	}
+
+	&__form {
+		row-gap: fluid(24, 16);
+	}
+}

@@ -1,0 +1,21 @@
+@use '../helpers' as *;
+
+.legacy {
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: fluid(60, 24);
+	}
+
+	&__media {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(16);
+		padding: fluid(32, 24);
+		background-color: var(--color-white);
+	}
+
+	&__caption {
+		text-align: center;
+	}
+}

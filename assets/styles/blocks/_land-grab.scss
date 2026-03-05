@@ -1,0 +1,50 @@
+@use '../helpers' as *;
+
+.land-grab {
+	@include bg(
+		true,
+		cover,
+		0.3,
+		var(--bgUrl),
+		var(--bgUrl2x),
+		var(--bgMobileUrl),
+		var(--bgMobileUrl2x)
+	);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100dvh;
+	padding-block: rem(95) rem(130);
+
+	@include tablet {
+		min-height: auto;
+	}
+
+	&__inner {
+		display: flex;
+		align-items: end;
+		column-gap: rem(214);
+		color: var(--color-cotton);
+
+		@include tablet {
+			flex-direction: column;
+			align-items: start;
+			row-gap: rem(80);
+		}
+	}
+
+	&__title {
+		@include fluid-text(100, 32);
+
+		max-width: fluid(682, 226);
+	}
+
+	&__description {
+		max-width: fluid(252, 193);
+
+		@include tablet {
+			align-self: end;
+		}
+	}
+}
